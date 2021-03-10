@@ -2,7 +2,7 @@
   "name": "orsted-celestial",
   "version": "1.0.0",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js  --colors",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
     "start": "webpack serve --open --inline --config webpack/webpack.config.dev.js"
   },
   "devDependencies": {
