@@ -8,10 +8,14 @@ module.exports = merge(common, {
   mode: "development",
   devtool: "cheap-module-source-map",
   output: {
-    chunkFilename: "js/[name].chunk.js",
+    publicPath: '/',
   },
   devServer: {
     inline: true,
+    watchContentBase: true,
+    contentBase: Path.resolve(__dirname, "../src/pages"),
+    hot: true,
+    publicPath: '/',
   },
   plugins: [
     new Webpack.DefinePlugin({
@@ -24,6 +28,9 @@ module.exports = merge(common, {
         }
       ],
     }),
+    new Webpack.HotModuleReplacementPlugin({
+      // Options...
+    })
   ],
   module: {
     rules: [

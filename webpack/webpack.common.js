@@ -14,6 +14,7 @@ module.exports = {
   output: {
     path: Path.join(__dirname, "../build"),
     filename: "js/[name].js",
+    publicPath: '/',
   },
   optimization: {
     splitChunks: {
@@ -42,22 +43,26 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, "../src/pages/index.hbs"),
-      title: "Ørsted"
+      title: "Ørsted",
+      inject: true,
     }),
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, "../src/pages/sustainability.hbs"),
       filename: 'sustainability.html',
-      title: "Ørsted - Sustainability"
+      title: "Ørsted - Sustainability",
+      inject: true,
     }),
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, "../src/pages/shares.hbs"),
       filename: 'shares.html',
-      title: "Ørsted - Shares"
+      title: "Ørsted - Shares",
+      inject: true,
     }),
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, "../src/pages/whitepapers.hbs"),
       filename: 'whitepapers.html',
-      title: "Ørsted - Shares"
+      title: "Ørsted - Shares",
+      inject: true,
     })
   ],
   resolve: {

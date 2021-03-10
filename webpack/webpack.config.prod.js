@@ -9,7 +9,6 @@ module.exports = merge(common, {
   stats: "errors-only",
   bail: true,
   output: {
-    // filename: 'js/[name].[chunkhash:8].js',
     filename: "js/[name].js",
     chunkFilename: "js/[name].chunk.js"
   },
