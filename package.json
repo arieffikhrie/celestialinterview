@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "core-js": "^3.9.1",
-    "handlebars-helpers": "^0.10.0"
+    "core-js": "^3.9.1"
   }
 }
