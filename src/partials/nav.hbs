@@ -2,9 +2,7 @@
     <div class="headerSlider-spacer"></div>
     <header class="headerSlider">
         <div class="headerSlider-top">
-            <!-- MAKE START overlay when active menu or search, also remove all active classes for menu or search-->
             <div class="nav-overlay"></div>
-            <!-- MAKE END-->
             <div class="headerSlider-top-inner">
                 <div class="header-left">
                     <div class="header-logo">
@@ -17,36 +15,28 @@
                                 alt="logo">
                         </a>
                     </div>
-                    <!-- MAKE START-->
-                    <!--rebased menu from right section to left also changes some class names (prevent CSS conflicts)-->
                     <div class="header-navigation">
                         <div class="header-navigation-inner">
-                            <nav class="headerMegaNavigation megaNavigation-dk-business navigation-jointventure"
+                            <nav class="headerMegaNavigation"
                                 role="navigation">
-                                <!--MAKE START responsiveBackTo-menu - used for back to first level menu in responsive mode-->
                                 <div class="responsiveBackTo-menu">Back</div>
-                                <!--MAKE END-->
-                                <!--MAKE START mega menu list -->
                                 <ul class="headerMegaNavigation-menu">
-                                    <!--first level-->
                                     <li class="headerMegaNavigation-menu-item">
-                                        <a class="headerMegaNavigation-menu-item-link  megaNavigation-submenu-trigger isPageAncestor"
+                                        <a class="headerMegaNavigation-menu-item-link  megaNavigation-submenu-trigger {{#if (eq filename "sustainability.html")}}isPageAncestor{{/if}}"
                                             href="/sustainability.html">Sustainability</a>
                                     </li>
                                     <li class="headerMegaNavigation-menu-item">
-                                        <a class="headerMegaNavigation-menu-item-link  megaNavigation-submenu-trigger"
+                                        <a class="headerMegaNavigation-menu-item-link  megaNavigation-submenu-trigger {{#if (eq filename "shares.html")}}isPageAncestor{{/if}}"
                                             href="/shares.html">Shares</a>
                                     </li>
                                     <li class="headerMegaNavigation-menu-item">
-                                        <a class="headerMegaNavigation-menu-item-link  megaNavigation-submenu-trigger"
+                                        <a class="headerMegaNavigation-menu-item-link  megaNavigation-submenu-trigger {{#if (eq filename "whitepapers.html")}}isPageAncestor{{/if}}"
                                             href="/whitepapers.html">Whitepapers</a>
                                     </li>
                                 </ul>
-                                <!--MAKE END-->
                             </nav>
                         </div>
                     </div>
-                    <!-- MAKE END-->
                 </div>
             </div>
         </div>

@@ -1,24 +1,29 @@
 const Path = require("path");
 const Webpack = require("webpack");
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "development",
-  devtool: "cheap-eval-source-map",
+  devtool: "cheap-module-source-map",
   output: {
     chunkFilename: "js/[name].chunk.js",
-    jsonpFunction: "jsonpFunction"
   },
   devServer: {
-    inline: true
+    inline: true,
   },
   plugins: [
     new Webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify("development")
+      "process.env.NODE_ENV": JSON.stringify("development"),
     }),
-    new CopyWebpackPlugin([ { from: Path.resolve('src/public') } ])
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: Path.resolve(__dirname, "../src/public"),
+        }
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -28,18 +33,18 @@ module.exports = merge(common, {
         enforce: "pre",
         loader: "eslint-loader",
         options: {
-          emitWarning: true
-        }
+          emitWarning: true,
+        },
       },
       {
         test: /\.js$/,
         include: Path.resolve(__dirname, "../src"),
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
         test: /\.s?css$/i,
-        use: ["style-loader", "css-loader?sourceMap=true", "sass-loader"]
-      }
-    ]
-  }
+        use: ["style-loader", "css-loader?sourceMap=true", "sass-loader"],
+      },
+    ],
+  },
 });

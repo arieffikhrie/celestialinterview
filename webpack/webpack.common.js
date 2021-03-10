@@ -14,7 +14,6 @@ module.exports = {
   output: {
     path: Path.join(__dirname, "../build"),
     filename: "js/[name].js",
-    jsonpFunction: 'jsonp123111'
   },
   optimization: {
     splitChunks: {
@@ -28,9 +27,14 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      { from: Path.resolve(__dirname, "../public"), to: "public" }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: Path.resolve(__dirname, "../public"),
+          to: "public"
+        }
+      ],
+    }),
     new webpack.LoaderOptionsPlugin({
       options: {
         handlebarsLoader: {}
@@ -73,7 +77,11 @@ module.exports = {
         use: {
           loader: "handlebars-loader",
           options: {
-            partialDirs: [Path.resolve(__dirname, "../src", "partials")]
+            partialDirs: [Path.resolve(__dirname, "../src", "partials")],
+            runtime: Path.resolve(__dirname, "./config/handlebars"),
+            precompileOptions: {
+              knownHelpersOnly: false,
+            },
           }
         }
       },

@@ -1,28 +1,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="format-detection" content="telephone=no" />
-<meta name="pageid" content="{77fb8f2e-b0a1-4f96-9902-27a5ea860ef6}">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>{{htmlWebpackPlugin.options.title}}</title>
-<link rel="canonical" href="https://plumcreekwindenergy.com/">
-<meta property="og:url" href="https://plumcreekwindenergy.com/">
-<link rel="alternate" hreflang="en" href="https://plumcreekwindenergy.com/">
-<meta name="robots" content="INDEX, FOLLOW">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:type" content="website">
-<link rel="icon" href="https://orstedcdn.azureedge.net/-/media/WWW/Images/Corp/Graphics/Icons/favicon.ico"
-    type="image/x-icon" />
-<link rel="shortcut icon" href="https://orstedcdn.azureedge.net/-/media/WWW/Images/Corp/Graphics/Icons/favicon.ico"
-    type="image/x-icon" />
-<link rel="apple-touch-icon"
-    href="https://orstedcdn.azureedge.net/-/media/WWW/Images/Corp/Graphics/Icons/Orsted-icon/apple-touch-icon.png"
-    type="image/png" />
-<link rel="stylesheet" media="screen, print" href="https://orstedcdn.azureedge.net/Assets_/dist/css/main.min.css" />
-<link rel="stylesheet" media="print" href="https://orstedcdn.azureedge.net/Assets_/dist/css/main-print.min.css" />
-<script src="https://external-orstedcdn.azureedge.net/shared/libs/modernizr/2.8.3/modernizr.min.js"
-    integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
-<script src="https://external-orstedcdn.azureedge.net/shared/libs/jquery/2.2.0/jquery.min.js"
-    integrity="sha256-ihAoc6M/JPfrIiIeayPE9xjin4UWjsx2mjW/rtmxLM4=" crossorigin="anonymous"></script>
+<title>{{#if title}}{{title}}{{else}}&#216;rsted - Love your home{{/if}}</title>
+
+<link rel="preload" href="/Assets_/dist/fonts/OrstedSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/Assets_/dist/fonts/dong-maine.woff" as="font" type="font/woff2" crossorigin>
+
+<link media="screen, print" href="/Assets_/dist/css/vendor.css" rel="stylesheet">
+<link media="screen, print" href="/Assets_/dist/css/app.css" rel="stylesheet">
+<link media="print" href="/Assets_/dist/css/app-print.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+    crossorigin="anonymous"></script>
+<script>
+    (function (global, $) {
+        const jquery = $.noConflict();
+        global["OrstedJquery"] = jquery;
+        global["jQuery"] = jquery;
+        global["$"] = jquery;
+    })(window, jQuery);
+</script>
+
 <script>
     var DateFormatingOptions = {
         dateFormat: 'DD.MM.YYYY HH:mm',
