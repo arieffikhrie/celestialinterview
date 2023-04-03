@@ -11,11 +11,6 @@ module.exports = merge(common, {
     publicPath: '/',
   },
   devServer: {
-    inline: true,
-    watchContentBase: true,
-    contentBase: Path.resolve(__dirname, "../src/pages"),
-    hot: true,
-    publicPath: '/',
   },
   plugins: [
     new Webpack.DefinePlugin({
